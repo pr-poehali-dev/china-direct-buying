@@ -260,7 +260,7 @@ export default function Index() {
                   className="relative rounded-3xl w-full object-cover aspect-[4/5] shadow-2xl"
                 />
                 <div className="absolute -bottom-5 -right-5 bg-white rounded-2xl shadow-xl px-5 py-4 border border-brand-orange/15">
-                  <div className="font-oswald text-2xl text-brand-orange">10+</div>
+                  <div className="font-oswald text-2xl text-brand-orange">50+</div>
                   <div className="text-sm text-muted-foreground">успешных кейсов</div>
                 </div>
                 <label className="absolute top-3 right-3 cursor-pointer group">
@@ -287,11 +287,11 @@ export default function Index() {
               </p>
               <div className="space-y-3 mb-10">
                 {[
-                  "Более 1 года опыта работы с Китаем",
-                  "Более 15 учеников из России",
-                  "Более 50 успешных закупок",
-                  "Более 1 500 000 ₽ оборота",
-                  "Более 10 успешных кейсов",
+                  "Более 2 лет работы с Китаем",
+                  "Более 70 учениц из России",
+                  "Более 100 успешных закупок",
+                  "Более 2 000 000 ₽ оборота",
+                  "Более 50 успешных кейсов",
                 ].map((fact, i) => (
                   <div key={i} className="flex items-center gap-3">
                     <div className="w-5 h-5 rounded-full flex-shrink-0 flex items-center justify-center"
