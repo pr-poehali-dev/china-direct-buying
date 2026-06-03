@@ -263,24 +263,13 @@ export default function Index() {
                   <div className="font-oswald text-2xl text-brand-orange">50+</div>
                   <div className="text-sm text-muted-foreground">успешных кейсов</div>
                 </div>
-                <label className="absolute top-3 right-3 cursor-pointer group">
-                  <div className="flex items-center gap-2 bg-white/90 backdrop-blur-sm border border-brand-orange/20 rounded-xl px-3 py-2 shadow-lg hover:bg-white hover:border-brand-orange/50 transition-all duration-200">
-                    {uploading
-                      ? <Icon name="Loader" size={14} className="text-brand-orange animate-spin" />
-                      : <Icon name="Camera" size={14} className="text-brand-orange" />
-                    }
-                    <span className="text-xs font-golos font-medium text-brand-dark">
-                      {uploading ? "Загрузка..." : "Загрузить фото"}
-                    </span>
-                  </div>
-                  <input type="file" accept="image/*" className="hidden" onChange={handlePhotoUpload} />
-                </label>
+
               </div>
             </div>
             <div className="reveal delay-200">
               <p className="text-brand-orange font-oswald tracking-widest uppercase text-sm mb-3">О себе</p>
               <h2 className="font-oswald text-4xl md:text-5xl text-brand-dark mb-6 leading-tight">
-                МЕНЯ ЗОВУТ<br /><span className="text-brand-orange">ГАЛИНА</span>
+                ШЕРИЕВА<br /><span className="text-brand-orange">ГАЛИНА</span>
               </h2>
               <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
                 Я эксперт по работе с Китаем и помогаю людям выгодно закупать товары напрямую у поставщиков и создавать доход на товарном бизнесе.
