@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Icon from "@/components/ui/icon";
 
-const AVATAR_URL = "https://cdn.poehali.dev/projects/f8180cbd-2b1c-4224-86e2-f1a7d1f032a8/files/4ece04a0-6543-4de9-8238-33ea5c7c5d73.jpg";
+const DEFAULT_AVATAR = "https://cdn.poehali.dev/projects/f8180cbd-2b1c-4224-86e2-f1a7d1f032a8/files/4ece04a0-6543-4de9-8238-33ea5c7c5d73.jpg";
 
 const modules = [
   { num: "01", title: "Основы работы с Китаем", desc: "Рынок Китая, схемы работы, возможности заработка и ошибки новичков." },
@@ -55,6 +55,20 @@ const ticker = ["Taobao", "1688", "Poizon", "Pinduoduo", "WeChat", "Прямые
 export default function Index() {
   const [formData, setFormData] = useState({ name: "", phone: "", plan: "" });
   const [submitted, setSubmitted] = useState(false);
+  const [avatarUrl, setAvatarUrl] = useState(DEFAULT_AVATAR);
+  const [uploading, setUploading] = useState(false);
+
+  const handlePhotoUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    setUploading(true);
+    const reader = new FileReader();
+    reader.onload = () => {
+      setAvatarUrl(reader.result as string);
+      setUploading(false);
+    };
+    reader.readAsDataURL(file);
+  };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -90,7 +104,7 @@ export default function Index() {
 
         <nav className="absolute top-0 left-0 right-0 z-20 flex items-center justify-between px-6 md:px-16 py-6">
           <div className="font-oswald text-white text-lg tracking-widest uppercase opacity-90">
-            🇨🇳 Китай без посредников
+            🇨🇳 Бизнес с Китаем
           </div>
           <button
             onClick={() => scrollTo("subscribe")}
@@ -107,10 +121,10 @@ export default function Index() {
           </div>
 
           <h1 className="font-oswald text-5xl md:text-7xl lg:text-8xl text-white leading-none tracking-tight mb-6 animate-slide-up text-glow">
-            КИТАЙ<br />
-            <span className="text-brand-orange">БЕЗ</span>{" "}
+            БИЗНЕС<br />
+            <span className="text-brand-orange">С</span>{" "}
             <span className="relative inline-block">
-              ПОСРЕДНИКОВ
+              КИТАЕМ
               <span className="absolute -bottom-1 left-0 w-full h-1 bg-gradient-to-r from-brand-orange to-brand-yellow rounded-full" />
             </span>
           </h1>
@@ -213,7 +227,7 @@ export default function Index() {
                 <div className="absolute -inset-4 rounded-3xl opacity-20 animate-gradient"
                   style={{ background: "linear-gradient(135deg, #f04e0d, #f5a623, #f04e0d)", backgroundSize: "200% 200%" }} />
                 <img
-                  src={AVATAR_URL}
+                  src={avatarUrl}
                   alt="Галина — эксперт по работе с Китаем"
                   className="relative rounded-3xl w-full object-cover aspect-[4/5] shadow-2xl"
                 />
@@ -221,6 +235,18 @@ export default function Index() {
                   <div className="font-oswald text-2xl text-brand-orange">10+</div>
                   <div className="text-sm text-muted-foreground">успешных кейсов</div>
                 </div>
+                <label className="absolute top-3 right-3 cursor-pointer group">
+                  <div className="flex items-center gap-2 bg-white/90 backdrop-blur-sm border border-brand-orange/20 rounded-xl px-3 py-2 shadow-lg hover:bg-white hover:border-brand-orange/50 transition-all duration-200">
+                    {uploading
+                      ? <Icon name="Loader" size={14} className="text-brand-orange animate-spin" />
+                      : <Icon name="Camera" size={14} className="text-brand-orange" />
+                    }
+                    <span className="text-xs font-golos font-medium text-brand-dark">
+                      {uploading ? "Загрузка..." : "Загрузить фото"}
+                    </span>
+                  </div>
+                  <input type="file" accept="image/*" className="hidden" onChange={handlePhotoUpload} />
+                </label>
               </div>
             </div>
             <div className="reveal delay-200">
