@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Icon from "@/components/ui/icon";
 
-const DEFAULT_AVATAR = "https://cdn.poehali.dev/projects/f8180cbd-2b1c-4224-86e2-f1a7d1f032a8/bucket/1276d2df-c455-44ca-a95d-a109648d5144.jpg";
+const DEFAULT_AVATAR = "https://cdn.poehali.dev/projects/f8180cbd-2b1c-4224-86e2-f1a7d1f032a8/bucket/8340e2da-6c9c-42b2-828e-20aa0ea0c773.jpg";
 
 const modules = [
   { num: "01", title: "Основы работы с Китаем", desc: "Рынок Китая, схемы работы, возможности заработка и ошибки новичков." },
