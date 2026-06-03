@@ -52,6 +52,33 @@ const plans = [
 
 const ticker = ["Taobao", "1688", "Poizon", "Pinduoduo", "WeChat", "Прямые поставки", "Без знания языка", "Выгода до 80%", "Проверенные поставщики"];
 
+function ReviewCard({ name, msgs }: { name: string; msgs: string[] }) {
+  return (
+    <div className="reveal bg-[#faf7f5] rounded-3xl p-7 border border-brand-orange/10 hover:border-brand-orange/30 transition-all duration-300 hover:-translate-y-1">
+      <div className="flex items-center gap-3 mb-5">
+        <div className="w-10 h-10 rounded-full flex items-center justify-center text-white font-oswald text-base flex-shrink-0"
+          style={{ background: "linear-gradient(135deg, #f04e0d, #f5a623)" }}>
+          {name[0]}
+        </div>
+        <div>
+          <div className="font-semibold text-brand-dark text-sm">{name}</div>
+          <div className="text-xs text-muted-foreground">WhatsApp</div>
+        </div>
+        <div className="ml-auto flex gap-0.5">
+          {[1,2,3,4,5].map(s => <span key={s} className="text-brand-yellow">★</span>)}
+        </div>
+      </div>
+      <div className="space-y-2">
+        {msgs.map((msg, i) => (
+          <div key={i} className="bg-white rounded-2xl px-4 py-3 text-brand-dark text-sm leading-relaxed border border-brand-orange/8 shadow-sm">
+            {msg}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export default function Index() {
   const [formData, setFormData] = useState({ name: "", phone: "", plan: "" });
   const [submitted, setSubmitted] = useState(false);
@@ -434,19 +461,50 @@ export default function Index() {
               ЧТО ГОВОРЯТ<br /><span className="text-brand-orange">УЧЕНИКИ</span>
             </h2>
           </div>
-          <div className="columns-2 md:columns-3 gap-4 space-y-4">
-            {[
-              "https://cdn.poehali.dev/projects/f8180cbd-2b1c-4224-86e2-f1a7d1f032a8/bucket/a91ea228-09df-4917-b919-198ca89511db.jpg",
-              "https://cdn.poehali.dev/projects/f8180cbd-2b1c-4224-86e2-f1a7d1f032a8/bucket/bee8ff0e-2c3c-48c5-819a-af1f76d1d64f.jpg",
-              "https://cdn.poehali.dev/projects/f8180cbd-2b1c-4224-86e2-f1a7d1f032a8/bucket/a3ecc018-c7b9-4c56-999a-6ad418d5d047.jpg",
-              "https://cdn.poehali.dev/projects/f8180cbd-2b1c-4224-86e2-f1a7d1f032a8/bucket/8460bf42-4ba0-4133-82e9-d590f784ae3a.jpg",
-              "https://cdn.poehali.dev/projects/f8180cbd-2b1c-4224-86e2-f1a7d1f032a8/bucket/9d06ad97-e5ff-4852-9c27-d6442d4df293.jpg",
-              "https://cdn.poehali.dev/projects/f8180cbd-2b1c-4224-86e2-f1a7d1f032a8/bucket/c0e7b2ec-4175-4009-8f92-6cbaf41d5f9b.jpg",
-            ].map((src, i) => (
-              <div key={i} className="reveal break-inside-avoid rounded-2xl overflow-hidden border border-brand-orange/10 hover:border-brand-orange/40 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-zoom-in">
-                <img src={src} alt={`Отзыв ученика ${i + 1}`} className="w-full object-cover" loading="lazy" />
+          {/* Карточки отзывов */}
+          <div className="grid md:grid-cols-2 gap-6">
+
+            {/* Отзыв 1 — анонимный */}
+            <ReviewCard name="Ученица" msgs={[
+              "Да, даже зная самовыкуп, я смогла узнать несколько новых фишек, и плюс обмен — это самый топ 😍 Обучение очень доступное, без лишней информации, на доступном языке, спасибо 🙏💕",
+              "Спасибо тебе большое за все, те знания которые ты дала 🙏",
+              "Это бесценно на самом деле, а то что ты и дальше остаёшься с нами на связи... это вообще что-то. Не жалею что ждала пока ты начнёшь обучать 🤗🙏",
+            ]} />
+
+            {/* Отзыв 2 — Фатима */}
+            <ReviewCard name="Фатима" msgs={[
+              "Уиииииииии спасибо большое 🥰🥰🥰🥰🥰 Это для меня большой шажок 🥰🥰🥰",
+              "Галя, огромное спасибо тебе за такую возможность. Если бы не ты я, наверное, еще долго сидела и ныла бы что нет денег на обучение. Но как ты предложила, деньги сама не понимаю откуда нашлись",
+              "Благодаря тебе я эту цель поставила ❤️ теперь буду расти и расти, Даст Аллах ❤️❤️❤️",
+            ]} />
+
+            {/* Отзыв 3 — Айша (3 скриншота объединены) */}
+            <div className="reveal md:col-span-2 bg-[#faf7f5] rounded-3xl p-7 border border-brand-orange/10 hover:border-brand-orange/30 transition-all duration-300">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-10 h-10 rounded-full flex items-center justify-center text-white font-oswald text-base flex-shrink-0"
+                  style={{ background: "linear-gradient(135deg, #f04e0d, #f5a623)" }}>А</div>
+                <div>
+                  <div className="font-semibold text-brand-dark text-sm">Айша</div>
+                  <div className="text-xs text-muted-foreground">Бизнес-аккаунт</div>
+                </div>
+                <div className="ml-auto flex gap-1">
+                  {[1,2,3,4,5].map(s => <span key={s} className="text-brand-yellow">★</span>)}
+                </div>
               </div>
-            ))}
+              <div className="grid md:grid-cols-2 gap-3">
+                {[
+                  "Первый закуп помню так переживала, руки дрожали когда оформляла заказ. А сейчас когда спрашивают — отвечаю: я работаю. Бум 💥 чувство независимости переполняет 😊",
+                  "Я пришла на обучение к Галине с большой материальной нагрузкой, куча долгов, ипотека. Я покупала очень много дешёвых обучений по Китаю — никакого результата. Но тут я увидела у Гали обучение с наставничеством 🥺 Мы созвонились, и она предала мне уверенности в себе.",
+                  "Даже после обучения она нас не бросила. Мы создали группу в ватсапе и теперь мы с ней уже партнёры и делимся опытом 🥺",
+                  "За месяц я оформила два груза — с первого заработала 10 тыс, со второго 25 тыс 😍😍 Это всего за месяц, с группой на 35 человек ‼️ Я очень горжусь собой что не струсила и пошла на обучение именно к Гале 🙏",
+                ].map((msg, i) => (
+                  <div key={i} className="bg-white rounded-2xl px-4 py-3 text-brand-dark text-sm leading-relaxed border border-brand-orange/8">
+                    {msg}
+                  </div>
+                ))}
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
