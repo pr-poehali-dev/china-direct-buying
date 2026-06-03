@@ -178,12 +178,13 @@ export default function Index() {
             </button>
           </div>
 
-          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 animate-slide-up delay-600">
+          <div className="mt-16 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 animate-slide-up delay-600">
             {[
               { num: "2+ лет", label: "работы с Китаем" },
               { num: "70+", label: "учениц из России" },
               { num: "100+", label: "успешных закупок" },
               { num: "2 млн ₽+", label: "оборота" },
+              { num: "50+", label: "успешных кейсов" },
             ].map((s) => (
               <div key={s.label} className="border border-white/10 rounded-2xl px-5 py-4 bg-white/5 backdrop-blur-sm">
                 <div className="font-oswald text-2xl md:text-3xl text-brand-yellow mb-1">{s.num}</div>
