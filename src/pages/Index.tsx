@@ -434,28 +434,17 @@ export default function Index() {
               ЧТО ГОВОРЯТ<br /><span className="text-brand-orange">УЧЕНИКИ</span>
             </h2>
           </div>
-          <div className="grid md:grid-cols-2 gap-6">
-            {reviews.map((r, i) => (
-              <div
-                key={i}
-                className="reveal bg-[#faf7f5] rounded-3xl p-7 border border-brand-orange/10 hover:border-brand-orange/30 transition-all duration-300 hover:-translate-y-1"
-              >
-                <div className="flex gap-1 mb-4">
-                  {Array.from({ length: r.stars }).map((_, j) => (
-                    <span key={j} className="text-brand-yellow text-lg">★</span>
-                  ))}
-                </div>
-                <p className="text-brand-dark font-golos leading-relaxed mb-6 text-base">"{r.text}"</p>
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full flex items-center justify-center text-white font-oswald text-base"
-                    style={{ background: "linear-gradient(135deg, #f04e0d, #f5a623)" }}>
-                    {r.name[0]}
-                  </div>
-                  <div>
-                    <div className="font-semibold text-brand-dark text-sm">{r.name}</div>
-                    <div className="text-muted-foreground text-xs">{r.city}</div>
-                  </div>
-                </div>
+          <div className="columns-2 md:columns-3 gap-4 space-y-4">
+            {[
+              "https://cdn.poehali.dev/projects/f8180cbd-2b1c-4224-86e2-f1a7d1f032a8/bucket/a91ea228-09df-4917-b919-198ca89511db.jpg",
+              "https://cdn.poehali.dev/projects/f8180cbd-2b1c-4224-86e2-f1a7d1f032a8/bucket/bee8ff0e-2c3c-48c5-819a-af1f76d1d64f.jpg",
+              "https://cdn.poehali.dev/projects/f8180cbd-2b1c-4224-86e2-f1a7d1f032a8/bucket/a3ecc018-c7b9-4c56-999a-6ad418d5d047.jpg",
+              "https://cdn.poehali.dev/projects/f8180cbd-2b1c-4224-86e2-f1a7d1f032a8/bucket/8460bf42-4ba0-4133-82e9-d590f784ae3a.jpg",
+              "https://cdn.poehali.dev/projects/f8180cbd-2b1c-4224-86e2-f1a7d1f032a8/bucket/9d06ad97-e5ff-4852-9c27-d6442d4df293.jpg",
+              "https://cdn.poehali.dev/projects/f8180cbd-2b1c-4224-86e2-f1a7d1f032a8/bucket/c0e7b2ec-4175-4009-8f92-6cbaf41d5f9b.jpg",
+            ].map((src, i) => (
+              <div key={i} className="reveal break-inside-avoid rounded-2xl overflow-hidden border border-brand-orange/10 hover:border-brand-orange/40 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-zoom-in">
+                <img src={src} alt={`Отзыв ученика ${i + 1}`} className="w-full object-cover" loading="lazy" />
               </div>
             ))}
           </div>
