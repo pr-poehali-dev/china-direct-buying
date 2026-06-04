@@ -569,6 +569,9 @@ export default function Index() {
         <p className="text-white/30 text-sm font-golos">
           © 2025 Китай без посредников · Галина · Эксперт по работе с Китаем
         </p>
+        <p className="text-white/20 text-xs font-golos mt-2">
+          ИП Шериева Галина Николаевна · ИНН 071404449616
+        </p>
       </footer>
     </div>
   );
