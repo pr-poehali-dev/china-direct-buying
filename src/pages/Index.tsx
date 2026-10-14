@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Icon from "@/components/ui/icon";
 
-const DEFAULT_AVATAR = "https://cdn.poehali.dev/projects/f8180cbd-2b1c-4224-86e2-f1a7d1f032a8/bucket/8340e2da-6c9c-42b2-828e-20aa0ea0c773.jpg";
+const DEFAULT_AVATAR = "https://cdn.poehali.dev/projects/f8180cbd-2b1c-4224-86e2-f1a7d1f032a8/bucket/29835259-a16f-43a9-83a0-4ad537713384.png";
 
 const modules = [
   { num: "01", title: "Основы работы с Китаем", desc: "Рынок Китая, схемы работы, возможности заработка и ошибки новичков." },
@@ -251,39 +251,27 @@ export default function Index() {
         <div className="max-w-5xl mx-auto px-6 md:px-16">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div className="reveal">
-              <div className="relative">
-                <div className="absolute -inset-4 rounded-3xl opacity-20 animate-gradient"
-                  style={{ background: "linear-gradient(135deg, #f04e0d, #f5a623, #f04e0d)", backgroundSize: "200% 200%" }} />
-                <img
-                  src={avatarUrl}
-                  alt="Галина — эксперт по работе с Китаем"
-                  className="relative rounded-3xl w-full object-cover aspect-[4/5] shadow-2xl"
-                />
-                <div className="absolute -bottom-5 -right-5 bg-white rounded-2xl shadow-xl px-5 py-4 border border-brand-orange/15">
-                  <div className="font-oswald text-2xl text-brand-orange">50+</div>
-                  <div className="text-sm text-muted-foreground">успешных кейсов</div>
-                </div>
-
-              </div>
-            </div>
-            <div className="reveal delay-200">
               <p className="text-brand-orange font-oswald tracking-widest uppercase text-sm mb-3">О себе</p>
               <h2 className="font-oswald text-4xl md:text-5xl text-brand-dark mb-6 leading-tight">
                 ШЕРИЕВА<br /><span className="text-brand-orange">ГАЛИНА</span>
               </h2>
-              <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
-                Я эксперт по работе с Китаем и помогаю людям выгодно закупать товары напрямую у поставщиков и создавать доход на товарном бизнесе.
+              <p className="text-brand-dark font-semibold text-lg mb-5 leading-relaxed">
+                Эксперт по Китаю и наставник по самостоятельным закупкам
               </p>
+              <div className="space-y-4 text-muted-foreground text-base md:text-lg mb-8 leading-relaxed">
+                <p>Более 2 лет я самостоятельно заказываю товары напрямую из Китая — для себя, семьи и заработка.</p>
+                <p>За это время я прошла весь путь сама: от первых заказов и ошибок до работы с китайскими площадками, поставщиками, оплатой и доставкой.</p>
+                <p>Теперь этот опыт я передаю своим ученицам — чтобы они не тратили время на те же ошибки, а пошагово понимали весь процесс и могли самостоятельно заказывать товары из Китая.</p>
+              </div>
               <div className="space-y-3 mb-10">
                 {[
-                  "Более 2 лет работы с Китаем",
-                  "Более 70 учениц из России",
-                  "Более 100 успешных закупок",
-                  "Более 2 000 000 ₽ оборота",
-                  "Более 50 успешных кейсов",
+                  "2+ года — заказываю напрямую из Китая",
+                  "70+ учениц — уже прошли моё обучение",
+                  "1 000 000 ₽ — заработала за 9 месяцев на товарах из Китая",
+                  "Пошаговое сопровождение — от регистрации до получения товара",
                 ].map((fact, i) => (
-                  <div key={i} className="flex items-center gap-3">
-                    <div className="w-5 h-5 rounded-full flex-shrink-0 flex items-center justify-center"
+                  <div key={i} className="flex items-start gap-3">
+                    <div className="w-5 h-5 mt-0.5 rounded-full flex-shrink-0 flex items-center justify-center"
                       style={{ background: "linear-gradient(135deg, #f04e0d, #f5a623)" }}>
                       <Icon name="Check" size={12} className="text-white" />
                     </div>
@@ -300,6 +288,22 @@ export default function Index() {
                 <span className="ml-2 group-hover:translate-x-1 inline-block transition-transform">→</span>
               </button>
             </div>
+            <div className="reveal delay-200">
+              <div className="relative">
+                <div className="absolute -inset-4 rounded-3xl opacity-20 animate-gradient"
+                  style={{ background: "linear-gradient(135deg, #f04e0d, #f5a623, #f04e0d)", backgroundSize: "200% 200%" }} />
+                <img
+                  src={avatarUrl}
+                  alt="Шериева Галина"
+                  className="relative rounded-3xl w-full object-cover aspect-square shadow-2xl"
+                />
+                <div className="absolute -bottom-5 -right-5 bg-white rounded-2xl shadow-xl px-5 py-4 border border-brand-orange/15">
+                  <div className="font-oswald text-2xl text-brand-orange">1 000 000 ₽</div>
+                  <div className="text-sm text-muted-foreground">за 9 месяцев</div>
+                </div>
+
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -312,7 +316,7 @@ export default function Index() {
               { icon: "✅", text: "Покупать напрямую у поставщиков" },
               { icon: "💰", text: "Экономить до 50–80% на покупках" },
               { icon: "🏪", text: "Запустить свой онлайн-магазин" },
-              { icon: "🚀", text: "Получать основной доход" },
+              { icon: "🚀", text: "Начать зарабатывать на товарах из Китая" },
             ].map((item, i) => (
               <div key={i} className="reveal flex flex-col items-center gap-3 p-5 rounded-2xl bg-white/10 border border-white/20">
                 <span className="text-4xl">{item.icon}</span>
