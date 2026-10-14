@@ -148,8 +148,8 @@ export default function Index() {
           </div>
 
           <h1 className="font-oswald text-4xl sm:text-5xl md:text-7xl lg:text-8xl text-white leading-none tracking-tight mb-6 animate-slide-up text-glow">
-            КИТАЙ<br />
-            <span className="relative inline-block text-brand-orange">
+            <span className="text-brand-orange">КИТАЙ</span><br />
+            <span className="relative inline-block text-white">
               БЕЗ ПОСРЕДНИКОВ
               <span className="absolute -bottom-1 left-0 w-full h-1 bg-gradient-to-r from-brand-orange to-brand-yellow rounded-full" />
             </span>
@@ -224,12 +224,12 @@ export default function Index() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
-              { icon: "ShoppingBag", text: "Хочу экономить на покупках для семьи" },
-              { icon: "TrendingUp", text: "Ищу дополнительный источник дохода" },
-              { icon: "AlertTriangle", text: "Боюсь потерять деньги на закупках" },
-              { icon: "Search", text: "Не понимаю, как искать поставщиков" },
-              { icon: "Clock", text: "Хочу управлять своим временем" },
-              { icon: "Globe", text: "Интересует бизнес без офиса и склада" },
+              { icon: "ShoppingBag", text: "Хочу покупать для себя и семьи дешевле, чем на маркетплейсах" },
+              { icon: "Package", text: "Хочу научиться сама заказывать товары из Китая напрямую" },
+              { icon: "TrendingUp", text: "Хочу понять, как можно зарабатывать на товарах из Китая" },
+              { icon: "AlertTriangle", text: "Боюсь, что придёт плохой товар или продавец меня обманет" },
+              { icon: "Search", text: "Не понимаю, как всё работает: где искать товар, как оплачивать и как он потом приходит" },
+              { icon: "Rocket", text: "Хочу начать, но у меня нет опыта и я не знаю, с чего начать" },
             ].map((item, i) => (
               <div
                 key={i}
