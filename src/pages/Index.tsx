@@ -131,7 +131,7 @@ export default function Index() {
 
         <nav className="absolute top-0 left-0 right-0 z-20 flex items-center justify-between px-6 md:px-16 py-6">
           <div className="font-oswald text-white text-lg tracking-widest uppercase opacity-90">
-            🇨🇳 Бизнес с Китаем
+            🇨🇳 Галина Шериева | Эксперт по Китаю
           </div>
           <button
             onClick={() => scrollTo("subscribe")}
@@ -144,26 +144,28 @@ export default function Index() {
         <div className="relative z-10 max-w-5xl mx-auto px-6 md:px-16 pt-28 pb-20">
           <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-1.5 mb-8 animate-fade-in">
             <span className="w-2 h-2 rounded-full bg-brand-yellow animate-pulse" />
-            <span className="text-white/80 text-sm font-golos">Набор открыт — осталось 7 мест</span>
+            <span className="text-white/80 text-sm font-golos">ОНЛАЙН-ОБУЧЕНИЕ • НАБОР ОТКРЫТ</span>
           </div>
 
-          <h1 className="font-oswald text-5xl md:text-7xl lg:text-8xl text-white leading-none tracking-tight mb-6 animate-slide-up text-glow">
-            БИЗНЕС<br />
-            <span className="text-brand-orange">С</span>{" "}
-            <span className="relative inline-block">
-              КИТАЕМ
+          <h1 className="font-oswald text-4xl sm:text-5xl md:text-7xl lg:text-8xl text-white leading-none tracking-tight mb-6 animate-slide-up text-glow">
+            КИТАЙ<br />
+            <span className="relative inline-block text-brand-orange">
+              БЕЗ ПОСРЕДНИКОВ
               <span className="absolute -bottom-1 left-0 w-full h-1 bg-gradient-to-r from-brand-orange to-brand-yellow rounded-full" />
             </span>
           </h1>
 
           <p className="text-white/70 text-lg md:text-xl max-w-2xl mb-10 font-golos animate-slide-up delay-200">
-            От выгодных закупок для себя до собственного онлайн-бизнеса.
-            Без знания языка, больших вложений и опыта.
+            Научись покупать товары из Китая напрямую{" "}
+            <span className="text-brand-orange font-semibold">в 2–5 раз дешевле</span>{" "}
+            — для себя, семьи или заработка.
+            <br /><br />
+            Без знания китайского языка, больших закупок и опыта. С пошаговым обучением и поддержкой на каждом этапе.
           </p>
 
           <div className="flex flex-wrap gap-4 animate-slide-up delay-400">
             <button
-              onClick={() => scrollTo("subscribe")}
+              onClick={() => scrollTo("pricing")}
               className="group px-8 py-4 rounded-2xl font-oswald text-lg tracking-wide text-white glow-orange transition-all duration-300 hover:scale-105"
               style={{ background: "linear-gradient(135deg, #f04e0d, #f5a623)" }}
             >
@@ -178,17 +180,15 @@ export default function Index() {
             </button>
           </div>
 
-          <div className="mt-16 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 animate-slide-up delay-600">
+          <div className="mt-16 grid grid-cols-3 gap-3 md:gap-6 max-w-2xl animate-slide-up delay-600">
             {[
-              { num: "2+ лет", label: "работы с Китаем" },
-              { num: "70+", label: "учениц из России" },
-              { num: "100+", label: "успешных закупок" },
-              { num: "2 млн ₽+", label: "оборота" },
-              { num: "50+", label: "успешных кейсов" },
+              { num: "2+ года", label: "Работы с Китаем" },
+              { num: "70+", label: "Учениц из России" },
+              { num: "100+", label: "Успешных закупок" },
             ].map((s) => (
-              <div key={s.label} className="border border-white/10 rounded-2xl px-5 py-4 bg-white/5 backdrop-blur-sm">
-                <div className="font-oswald text-2xl md:text-3xl text-brand-yellow mb-1">{s.num}</div>
-                <div className="text-white/50 text-sm">{s.label}</div>
+              <div key={s.label} className="border border-white/10 rounded-2xl px-3 md:px-5 py-4 bg-white/5 backdrop-blur-sm">
+                <div className="font-oswald text-xl md:text-3xl text-brand-yellow mb-1">{s.num}</div>
+                <div className="text-white/50 text-xs md:text-sm">{s.label}</div>
               </div>
             ))}
           </div>
