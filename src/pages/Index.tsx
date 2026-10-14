@@ -249,7 +249,7 @@ export default function Index() {
       {/* ABOUT */}
       <section id="about" className="py-24 bg-white">
         <div className="max-w-5xl mx-auto px-6 md:px-16">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
+          <div className="grid md:grid-cols-2 gap-16 items-start">
             <div className="reveal">
               <p className="text-brand-orange font-oswald tracking-widest uppercase text-sm mb-3">О себе</p>
               <h2 className="font-oswald text-4xl md:text-5xl text-brand-dark mb-6 leading-tight">
@@ -258,12 +258,34 @@ export default function Index() {
               <p className="text-brand-dark font-semibold text-lg mb-5 leading-relaxed">
                 Эксперт по Китаю и наставник по самостоятельным закупкам
               </p>
-              <div className="space-y-4 text-muted-foreground text-base md:text-lg mb-8 leading-relaxed">
-                <p>Более 2 лет я самостоятельно заказываю товары напрямую из Китая — для себя, семьи и заработка.</p>
-                <p>За это время я прошла весь путь сама: от первых заказов и ошибок до работы с китайскими площадками, поставщиками, оплатой и доставкой.</p>
-                <p>Теперь этот опыт я передаю своим ученицам — чтобы они не тратили время на те же ошибки, а пошагово понимали весь процесс и могли самостоятельно заказывать товары из Китая.</p>
+              <p className="text-muted-foreground text-base md:text-lg mb-8 leading-relaxed">
+                Более 2 лет я самостоятельно заказываю товары напрямую из Китая. За это время прошла путь от первых ошибок до уверенной работы с площадками, поставщиками, оплатой и доставкой. Теперь передаю этот опыт ученицам, чтобы они быстрее разобрались во всём процессе, избежали ненужных ошибок и потерь, прошли понятный путь шаг за шагом и могли самостоятельно заказывать из Китая.
+              </p>
+              <button
+                onClick={() => scrollTo("subscribe")}
+                className="group px-7 py-3.5 rounded-xl font-oswald text-base tracking-wide text-white transition-all duration-300 hover:scale-105 hover:shadow-xl"
+                style={{ background: "linear-gradient(135deg, #f04e0d, #f5a623)" }}
+              >
+                Записаться на курс
+                <span className="ml-2 group-hover:translate-x-1 inline-block transition-transform">→</span>
+              </button>
+            </div>
+            <div className="reveal delay-200 md:pt-8">
+              <div className="relative">
+                <div className="absolute -inset-4 rounded-3xl opacity-20 animate-gradient"
+                  style={{ background: "linear-gradient(135deg, #f04e0d, #f5a623, #f04e0d)", backgroundSize: "200% 200%" }} />
+                <img
+                  src={avatarUrl}
+                  alt="Шериева Галина"
+                  className="relative rounded-3xl w-full object-cover aspect-square shadow-2xl"
+                />
+                <div className="absolute -bottom-5 -right-5 bg-white rounded-2xl shadow-xl px-5 py-4 border border-brand-orange/15">
+                  <div className="font-oswald text-2xl text-brand-orange">50+</div>
+                  <div className="text-sm text-muted-foreground">успешных кейсов</div>
+                </div>
+
               </div>
-              <div className="space-y-3 mb-10">
+              <div className="space-y-4 mt-12">
                 {[
                   "2+ года — заказываю напрямую из Китая",
                   "70+ учениц — уже прошли моё обучение",
@@ -278,30 +300,6 @@ export default function Index() {
                     <span className="text-brand-dark font-medium">{fact}</span>
                   </div>
                 ))}
-              </div>
-              <button
-                onClick={() => scrollTo("subscribe")}
-                className="group px-7 py-3.5 rounded-xl font-oswald text-base tracking-wide text-white transition-all duration-300 hover:scale-105 hover:shadow-xl"
-                style={{ background: "linear-gradient(135deg, #f04e0d, #f5a623)" }}
-              >
-                Записаться на курс
-                <span className="ml-2 group-hover:translate-x-1 inline-block transition-transform">→</span>
-              </button>
-            </div>
-            <div className="reveal delay-200">
-              <div className="relative">
-                <div className="absolute -inset-4 rounded-3xl opacity-20 animate-gradient"
-                  style={{ background: "linear-gradient(135deg, #f04e0d, #f5a623, #f04e0d)", backgroundSize: "200% 200%" }} />
-                <img
-                  src={avatarUrl}
-                  alt="Шериева Галина"
-                  className="relative rounded-3xl w-full object-cover aspect-square shadow-2xl"
-                />
-                <div className="absolute -bottom-5 -right-5 bg-white rounded-2xl shadow-xl px-5 py-4 border border-brand-orange/15">
-                  <div className="font-oswald text-2xl text-brand-orange">1 000 000 ₽</div>
-                  <div className="text-sm text-muted-foreground">за 9 месяцев</div>
-                </div>
-
               </div>
             </div>
           </div>
