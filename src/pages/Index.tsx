@@ -258,12 +258,13 @@ export default function Index() {
               <p className="text-brand-dark font-semibold text-lg mb-5 leading-relaxed">
                 Эксперт по Китаю и наставник по самостоятельным закупкам
               </p>
-              <p className="text-muted-foreground text-base md:text-lg mb-8 leading-relaxed">
-                Более 2 лет я самостоятельно заказываю товары напрямую из Китая. За это время прошла путь от первых ошибок до уверенной работы с площадками, поставщиками, оплатой и доставкой. Теперь передаю этот опыт ученицам, чтобы они быстрее разобрались во всём процессе, избежали ненужных ошибок и потерь, прошли понятный путь шаг за шагом и могли самостоятельно заказывать из Китая.
-              </p>
+              <div className="space-y-5 text-muted-foreground text-base md:text-lg mb-12 leading-relaxed">
+                <p>Более 2 лет я самостоятельно заказываю товары напрямую из Китая. За это время прошла путь от первых ошибок до уверенной работы с площадками, поставщиками, оплатой и доставкой.</p>
+                <p>Теперь передаю этот опыт ученицам, чтобы они быстрее разобрались во всём процессе, избежали ненужных ошибок и потерь, прошли понятный путь шаг за шагом и могли самостоятельно заказывать из Китая.</p>
+              </div>
               <button
                 onClick={() => scrollTo("subscribe")}
-                className="group px-7 py-3.5 rounded-xl font-oswald text-base tracking-wide text-white transition-all duration-300 hover:scale-105 hover:shadow-xl"
+                className="group px-9 py-4 rounded-xl font-oswald text-lg tracking-wide text-white transition-all duration-300 hover:scale-105 hover:shadow-xl"
                 style={{ background: "linear-gradient(135deg, #f04e0d, #f5a623)" }}
               >
                 Записаться на курс
@@ -279,9 +280,9 @@ export default function Index() {
                   alt="Шериева Галина"
                   className="relative rounded-3xl w-full object-cover aspect-square shadow-2xl"
                 />
-                <div className="absolute -bottom-5 -right-5 bg-white rounded-2xl shadow-xl px-5 py-4 border border-brand-orange/15">
-                  <div className="font-oswald text-2xl text-brand-orange">50+</div>
-                  <div className="text-sm text-muted-foreground">успешных кейсов</div>
+                <div className="absolute -bottom-5 -right-5 bg-white rounded-xl shadow-lg px-3 py-1.5 border border-brand-orange/15 text-center leading-tight">
+                  <div className="font-oswald text-3xl text-brand-orange leading-none">50+</div>
+                  <div className="text-[11px] text-muted-foreground mt-0.5">успешных кейсов</div>
                 </div>
 
               </div>
