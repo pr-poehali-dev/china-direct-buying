@@ -330,22 +330,12 @@ export default function Index() {
           </div>
           <ProgramAccordion />
 
-          <div className="reveal mt-12 p-8 rounded-3xl border border-brand-yellow/20 bg-white/5">
-            <p className="text-brand-yellow font-oswald text-xl tracking-wide uppercase mb-5">🎁 Бонусы курса</p>
-            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-3">
-              {[
-                "База проверенных поставщиков",
-                "Шаблоны переписок",
-                "Чек-лист безопасной закупки",
-                "Таблица расчёта прибыли",
-                "Подборка трендовых товаров",
-                "Полезные сервисы для работы",
-              ].map((b, i) => (
-                <div key={i} className="flex items-center gap-2.5 text-white/70 text-sm">
-                  <span className="text-brand-yellow">✦</span> {b}
-                </div>
-              ))}
-            </div>
+          <div className="reveal mt-12 p-8 md:p-10 rounded-3xl border border-brand-yellow/30 text-center max-w-3xl mx-auto"
+            style={{ background: "linear-gradient(135deg, rgba(240,78,13,0.15), rgba(245,166,35,0.15))" }}>
+            <p className="text-brand-yellow font-oswald text-2xl tracking-wide uppercase mb-4">Итог обучения</p>
+            <p className="text-white/90 text-base md:text-lg leading-relaxed">
+              Ты пройдёшь весь путь от первого входа на китайские площадки до самостоятельного заказа, оплаты и получения товара — с готовыми контактами, инструментами и понятным алгоритмом действий.
+            </p>
           </div>
         </div>
       </section>
