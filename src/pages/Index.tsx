@@ -1,17 +1,8 @@
 import { useEffect, useState } from "react";
 import Icon from "@/components/ui/icon";
+import ProgramAccordion from "@/components/ProgramAccordion";
 
 const DEFAULT_AVATAR = "https://cdn.poehali.dev/projects/f8180cbd-2b1c-4224-86e2-f1a7d1f032a8/bucket/29835259-a16f-43a9-83a0-4ad537713384.png";
-
-const modules = [
-  { num: "01", title: "Основы работы с Китаем", desc: "Рынок Китая, схемы работы, возможности заработка и ошибки новичков." },
-  { num: "02", title: "Поиск товаров", desc: "Анализ спроса, трендов и выбор прибыльных товаров." },
-  { num: "03", title: "Китайские площадки", desc: "Taobao, 1688, Poizon, Pinduoduo и необходимые сервисы." },
-  { num: "04", title: "Поставщики", desc: "Поиск, проверка, переговоры и защита от мошенников." },
-  { num: "05", title: "Закупка товара", desc: "Оформление заказов, оплата и контроль качества." },
-  { num: "06", title: "Логистика", desc: "Доставка, таможня, консолидация и расчёт себестоимости." },
-  { num: "07", title: "Масштабирование", desc: "Рост прибыли, автоматизация и развитие бизнеса." },
-];
 
 const reviews = [
   { name: "Марина К.", city: "Москва", text: "За первый месяц вернула стоимость курса на перепродаже детской одежды. Всё чётко и по делу!", stars: 5 },
@@ -334,22 +325,10 @@ export default function Index() {
           <div className="reveal text-center mb-16">
             <p className="text-brand-orange font-oswald tracking-widest uppercase text-sm mb-3">Программа</p>
             <h2 className="font-oswald text-4xl md:text-6xl text-white leading-tight">
-              7 МОДУЛЕЙ —<br /><span className="text-brand-yellow">ПОЛНАЯ СИСТЕМА</span>
+              8 МОДУЛЕЙ —<br /><span className="text-brand-yellow">ПОЛНАЯ СИСТЕМА</span>
             </h2>
           </div>
-          <div className="grid md:grid-cols-2 gap-4">
-            {modules.map((m, i) => (
-              <div key={i} className="reveal module-card bg-white/5 backdrop-blur-sm rounded-2xl p-6">
-                <div className="flex items-start gap-4">
-                  <span className="font-oswald text-5xl text-brand-orange/30 leading-none select-none">{m.num}</span>
-                  <div>
-                    <h3 className="font-oswald text-xl text-white mb-2 uppercase tracking-wide">{m.title}</h3>
-                    <p className="text-white/50 text-sm leading-relaxed">{m.desc}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+          <ProgramAccordion />
 
           <div className="reveal mt-12 p-8 rounded-3xl border border-brand-yellow/20 bg-white/5">
             <p className="text-brand-yellow font-oswald text-xl tracking-wide uppercase mb-5">🎁 Бонусы курса</p>
